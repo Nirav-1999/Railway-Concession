@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="btns">
+            <nav>
+                    <div class="menu-icon">
+                       <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="logo">
+                       <a href="landing.html">LOGO</a>
+                    </div>
+                    <div class="menu">
+                       <ul>
+                          <li><a href="landing.html">Home</a></li>
+                          <li><a href="index.html">College Login</a></li>
+                          <li><a href="railway.html">Railways Login</a></li>
+                          
+                       </ul>
+                    </div>
+                 </nav>
+    </div>
+    <div class="container register fadeIn">
+        <div class="row fadeIn">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Student Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">College Login</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <h3 class="register-heading">Student Login</h3>
+                        <div class="row register-form">
+                            <div class="col-md-12">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <input type="number" name="LGform1_user" class="form-control"
+                                            placeholder="Your Adhar Card Number*" value="" required="" />
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select class="custom-select custom-select-md mb-3">
+                                            <option selected>Select College*</option>
+                                            <option value="1">DJ Sanghvi</option>
+                                            <option value="2">Thadomal</option>
+                                            <option value="3">KJ somaiya</option>
+                                          </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="LGform1" class="btnContactSubmit" value="Login" />
+                                        <a href="ForgetPassword.php" class="btnForgetPwd" value="Login">Forget
+                                            Password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel"
+                        aria-labelledby="profile-tab">
+                        <h3 class="register-heading">College Login</h3>
+                        <div class="row register-form">
+                            <div class="col-md-12">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <input type="text" name="college_name" class="form-control"
+                                            placeholder="College Name *" value="" required="" />
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <input type="password" name="LGform2_pwd" class="form-control"
+                                            placeholder="Your Password *" value="" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="LGform2" class="btnContactSubmit" value="Login" />
+                                        <a href="ForgetPassword.php" class="btnForgetPwd" value="Login">Forget
+                                            Password?</a>
+                                       
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <a href="register.html" class="btnForgetPwd" value="Login">Don't have an account? Sign up</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

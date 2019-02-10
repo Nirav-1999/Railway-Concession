@@ -7,8 +7,8 @@ from .models import CollegeData,StudentData
 class UserForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ('username', 'email')
-
+        fields = ('username', )
+ 
 class CollegeDataForm(forms.ModelForm):
     class Meta:
         model = CollegeData
@@ -17,4 +17,5 @@ class CollegeDataForm(forms.ModelForm):
 class StudentDataForm(forms.ModelForm):
     class Meta:
         model = StudentData
-        fields = ('student_bdate','student_gender','student_add1','student_add2','student_aadhar','student_station')
+        exclude = ('college',)
+        fields = ('college','student_gender','student_add1','student_add2','student_aadhar','student_station')

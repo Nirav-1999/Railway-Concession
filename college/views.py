@@ -45,14 +45,27 @@ def add_student(request):
 		
         user_form = UserForm(request.POST)
         profile_form = StudentDataForm(request.POST)
-        print(user_form)
+        print(profile_form)
             
         if user_form.is_valid() and profile_form.is_valid():
+            print("HI")
+            print(request.user)
+            college = request.user
+            a = CustomUser.objects.get(username = college)
+            print(a)
+            print(a.college_user)
             user = user_form.save(commit=False)
-            user.save()
-
+            
+            # import pdb; pdb.set_trace()
+            print(user)
+            user.is_student = True
+            user.save() 
+            print("-----")
+            
+            print(college)
+            print("----")
+            user.Student_user.college = a.college_user
             user.Student_user.student_name = profile_form.cleaned_data.get('student_name')
-            user.Student_user.student_bdate = profile_form.cleaned_data.get('student_bdate')
             user.Student_user.student_gender = profile_form.cleaned_data.get('student_gender')
             user.Student_user.student_add1 = profile_form.cleaned_data.get('student_add1')
             user.Student_user.student_add2 = profile_form.cleaned_data.get('student_add2')
@@ -62,6 +75,7 @@ def add_student(request):
             user.Student_user.save()
             return redirect('college:dashboard')
         else:
+            print(profile_form.errors)
             print(user_form.errors)
             user_form = UserForm()
             profile_form = CollegeDataForm()

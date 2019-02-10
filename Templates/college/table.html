@@ -18,6 +18,11 @@
 	
 	<div class="limiter">
 		<div class="container-table100">
+			
+				
+			<h1 style="color:white">COLLEGE DASHBOARD</h1><a href="{% url 'logout' %}">
+					<button class="btn btn-danger" style="margin-left: 400px">Logout</button></a>
+				
 			<div class="wrap-table100">
 				<div class="table100">
 					<table>
@@ -29,7 +34,7 @@
 								<th class="column6">Address 1</th>
 								<th class="column6">Address 2</th>
 								<th class="column6">From</th>
-								<th class="column6">To</th>
+								<th class="column6">Destination</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -41,7 +46,7 @@
 									<td class="column6">{{student.student_add1}}</td>
 									<td class="column6">{{student.student_add2}}</td>
 									<td class="column6">{{student.student_station}}</td>
-									<td class="column6">Vile Parle</td>
+									<td class="column6">{{student.college.college_location}}</td>
 								</tr>
 							{% endfor %}
 								

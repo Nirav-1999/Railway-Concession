@@ -51,6 +51,7 @@
 										<th class="column6">Address 2</th>
 										<th class="column6">From</th>
 										<th class="column6">To</th>
+										<th class="column6">Accepted</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -62,7 +63,8 @@
 											<td class="column6">{{student.student_add1}}</td>
 											<td class="column6">{{student.student_add1}}</td>
 											<td class="column6">{{student.student_station}}</td>
-											<td class="column6">Vile Parle</td>
+											<td class="column6">{{student.college.college_location}}</td>
+											<td><input type="checkbox" class="column6"></td>
 										</tr>
 									{% endfor %}
 										

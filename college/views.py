@@ -98,12 +98,9 @@ class StudentDetailView(generic.ListView):
     template_name='college/table.html'
     context_object_name='students'
     def get_queryset(self):
-        return StudentData.objects.all()
+        a=StudentData.objects.filter(college = self.request.user.college_user)
 
+        return a
 def LandingView(request):
     return render(request,'college/landing.html')   
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c3f39a9771eb7ac3218cac82de157f4a9f099388

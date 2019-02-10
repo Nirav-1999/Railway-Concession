@@ -193,7 +193,7 @@ nav ul li a {
 }
 
   .background{
-      background-image: url('images/background.jpg');
+      background-image: url('../images/background.jpg');
       background-size: cover;
       background-position: 50%;
       position: relative;
@@ -203,11 +203,8 @@ nav ul li a {
       position: absolute;
       top: 0px;
       color: white;
-
-	
-        width: 100%;
+    width: 100%;
 	color: var(--red);
-	
 	z-index: 111;
   }
   
@@ -241,12 +238,10 @@ nav ul li a {
     margin-left: 20%;
 }
 .register-heading{
-    margin-left: 21%;
     margin-bottom: 10%;
     color: #e9ecef;
 }
 .register-heading h1{
-    margin-left: 21%;
     margin-bottom: 10%;
     color: #e9ecef;
 }

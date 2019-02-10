@@ -69,7 +69,6 @@ def add_student(request):
 
 def login_page(request):
     if request.method == "POST":
-        print(request.POST['type'])
         if request.POST['type'] == 'A':
             aadhar = request.POST['Aadhar_no']
             college = request.POST['college']

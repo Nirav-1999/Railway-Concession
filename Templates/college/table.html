@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<title>Concession Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'college/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'college/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'college/main1.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column6">Concession Form</th>
+								<th class="column6">Date</th>
+								<th class="column6">Name</th>
+								<th class="column6">Gender</th>
+								<th class="column6">Date of Birth</th>
+								<th class="column6">Class</th>
+								<th class="column6">Monthly/Quaterly</th>
+								<th class="column6">Address 2</th>
+								<th class="column6">Address 3</th>
+								<th class="column6">From</th>
+								<th class="column6">To</th>
+								<th class="column6">Accepted</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for student in students %}
+								<tr>
+									<td class="column6">{{student.student_name}}</td>
+									<td class="column6">31/01/2019</td>
+									<td class="column6">Shail Shah</td>
+									<td class="column6">Male</td>
+									<td class="column6">07/06/1999</td>
+									<td class="column6">Second</td>
+									<td class="column6">Quaterly</td>
+									<td class="column6">A-301,Neelam Apt</td>
+									<td class="column6">Kandivali West,Mumbai</td>
+									<td class="column6">Kandivali</td>
+									<td class="column6">Vile Parle</td>
+									<td><input type="checkbox" class="column6"></td>
+								</tr>
+							{% endfor %}
+								
+						</tbody>
+					</table>
+					<center>
+						<a href="{% url 'college:Add-Student' %}">
+							<button class="btn btn-warning btn1">Add Student</button></center>
+						</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+</body>
+</html>

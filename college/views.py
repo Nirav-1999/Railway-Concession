@@ -4,6 +4,8 @@ from django.views.generic import CreateView
 from accounts.models import CustomUser
 from django.contrib.auth.forms import  AuthenticationForm
 from .forms import CollegeDataForm,UserForm,StudentDataForm
+from .models import CollegeData,StudentData
+from django.views import generic
 
 
 def college_signup_view(request):
@@ -18,6 +20,7 @@ def college_signup_view(request):
             
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save(commit=False)
+            user.is_college = True
             user.save()
 
             user.college_user.college_name = profile_form.cleaned_data.get('college_name')
@@ -57,14 +60,11 @@ def add_student(request):
             user.Student_user.student_station = profile_form.cleaned_data.get('student_station')
 
             user.Student_user.save()
-            return render(request, 'college/blank.html',{
-                'user_form': user_form,
-                'profile_form': profile_form,
-            })
+            return redirect('college:dashboard')
         else:
             print(user_form.errors)
-            user_form = UserForm(prefix='UF')
-            profile_form = CollegeDataForm(prefix='PF')
+            user_form = UserForm()
+            profile_form = CollegeDataForm()
             
     return render(request, 'college/details.html',{
                 'user_form': user_form,
@@ -74,6 +74,7 @@ def add_student(request):
 def login_page(request):
     if request.method == "POST":
         form = AuthenticationForm(data = request.POST)
+        print(form)
         # print(form)
         if form.is_valid():
             print("----HI----")
@@ -83,9 +84,16 @@ def login_page(request):
             if user.is_student:
                 return redirect('')
             elif user.is_college:
-                render(request, "college/blank.html", {"form" : form})
+                return redirect('college:dashboard')
         else:
             print(form.errors)
     else:
         form = AuthenticationForm()
         return render(request, "college/index.html", {"form" : form})
+
+class StudentDetailView(generic.ListView):
+    model=StudentData
+    template_name='college/table.html'
+    context_object_name='students'
+    def get_queryset(self):
+        return StudentData.objects.all()

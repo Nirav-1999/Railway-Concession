@@ -38,8 +38,8 @@
                     <form method="POST">
                         {% csrf_token %}
                         <div class="input-group">
-                            <label for="{{ form.student_name.id_for_label }}"></label>
-                            <input class="input--style-1" type="text" placeholder="NAME" name="student_name" id="id_student_name"  required="">
+                            <label for="{{ form.username.id_for_label }}"></label>
+                            <input class="input--style-1" type="text" placeholder="NAME" name="username" id="id_username"  required="">
                         </div>
                       
                         <div class="row row-space">
@@ -90,8 +90,23 @@
                                 </div>
                             </div>
                         </div>
-                        
-                       
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label for="{{ form.password1.id_for_label }}"></label>
+                                    <input class="input--style-1" type="hidden" placeholder="STATION EX.MALAD" name="password1" id="id_password1" value="pass@123">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label for="{{ form.password2.id_for_label }}"></label>
+                                    <input class="input--style-1" type="hidden" placeholder="STATION EX.MALAD" name="password2" id="id_password2" value="pass@123">
+                                </div>
+                            </div>
+                        </div>
+                    
                        
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit">Submit</button>

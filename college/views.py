@@ -4,6 +4,7 @@ from django.views.generic import CreateView
 from accounts.models import CustomUser
 from django.contrib.auth.forms import  AuthenticationForm
 from .forms import CollegeDataForm,UserForm,StudentDataForm
+from .models import CollegeData
 
 
 def college_signup_view(request):
@@ -74,6 +75,7 @@ def add_student(request):
 def login_page(request):
     if request.method == "POST":
         form = AuthenticationForm(data = request.POST)
+        print(form)
         # print(form)
         if form.is_valid():
             print("----HI----")

@@ -7,6 +7,4 @@ urlpatterns = [
     url(r'^college-sign-up/$',views.college_signup_view, name='College-SignUp'),
     url(r'^add-student/$',views.add_student, name='Add-Student'),
     url(r'^college-login/$',views.login_page, name='login'),
-   
-
 ]

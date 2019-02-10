@@ -4,8 +4,8 @@ from django import forms
 from django.db import transaction
 from .models import CollegeData,StudentData
 
-class UserForm(forms.ModelForm):
-    class Meta:
+class UserForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
         model = CustomUser
         fields = ('username', 'email')
 
@@ -17,4 +17,4 @@ class CollegeDataForm(forms.ModelForm):
 class StudentDataForm(forms.ModelForm):
     class Meta:
         model = StudentData
-        fields = ('student_name', 'student_bdate','student_gender','student_add1','student_add2','student_aadhar','student_station')
+        fields = ('student_bdate','student_gender','student_add1','student_add2','student_aadhar','student_station')

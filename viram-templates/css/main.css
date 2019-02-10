@@ -180,7 +180,11 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #2c6ed5;
+
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+
+
+
  
 }
 

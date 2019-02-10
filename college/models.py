@@ -14,17 +14,16 @@ class CollegeData(models.Model):
         return self.college_name
 
 class StudentData(models.Model):
-    college = models.ForeignKey(CollegeData, on_delete=models.CASCADE, blank = True)
+    college = models.ForeignKey(CollegeData,related_name='college', on_delete=models.CASCADE, blank = True)
     user = models.OneToOneField('accounts.CustomUser', related_name = 'Student_user',on_delete=models.CASCADE)
-    student_bdate = models.DateField()
     student_gender = models.CharField(max_length = 10)
     student_add1 = models.CharField(max_length = 300)
     student_add2 = models.CharField(max_length = 300)
-    student_aadhar = models.IntegerField()
+    student_aadhar = models.IntegerField(default=None,blank=True, null=True)
     student_station = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.student_name
+        return self.user.username
     
 
 @receiver(post_save, sender=CustomUser)

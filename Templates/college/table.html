@@ -23,35 +23,25 @@
 					<table>
 						<thead>
 							<tr class="table100-head">
-								<th class="column6">Concession Form</th>
-								<th class="column6">Date</th>
+								<th class="column6">Aadhar No.</th>
 								<th class="column6">Name</th>
 								<th class="column6">Gender</th>
-								<th class="column6">Date of Birth</th>
-								<th class="column6">Class</th>
-								<th class="column6">Monthly/Quaterly</th>
+								<th class="column6">Address 1</th>
 								<th class="column6">Address 2</th>
-								<th class="column6">Address 3</th>
 								<th class="column6">From</th>
 								<th class="column6">To</th>
-								<th class="column6">Accepted</th>
 							</tr>
 						</thead>
 						<tbody>
 							{% for student in students %}
 								<tr>
-									<td class="column6">{{student.student_name}}</td>
-									<td class="column6">31/01/2019</td>
-									<td class="column6">Shail Shah</td>
-									<td class="column6">Male</td>
-									<td class="column6">07/06/1999</td>
-									<td class="column6">Second</td>
-									<td class="column6">Quaterly</td>
-									<td class="column6">A-301,Neelam Apt</td>
-									<td class="column6">Kandivali West,Mumbai</td>
-									<td class="column6">Kandivali</td>
+									<td class="column6">{{student.student_aadhar}}</td>
+									<td class="column6">{{student.user.username}}</td>
+									<td class="column6">{{student.student_gender}}</td>
+									<td class="column6">{{student.student_add1}}</td>
+									<td class="column6">{{student.student_add1}}</td>
+									<td class="column6">{{student.student_station}}</td>
 									<td class="column6">Vile Parle</td>
-									<td><input type="checkbox" class="column6"></td>
 								</tr>
 							{% endfor %}
 								

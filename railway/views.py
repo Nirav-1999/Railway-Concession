@@ -16,9 +16,9 @@ def RailwayLogin(request):
             print(user)
             login(request, user)    
             if user.is_railway:
-                return HttpResponse("OK")
+                return render(request, "railway/table2.html", {"form" : form} )
         else:
             print(form.errors)
     else:
         form = AuthenticationForm()
-        return render(request, "railway/railway.html", {"form" : form})
+        return render(request, "railway/railway.html", {"form":form})

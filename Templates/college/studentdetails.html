@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Student Details</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'college/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="{% static 'college/select2.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+
+    <!-- Main CSS-->
+    <link href="{% static 'college/style1.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    {% if student %}
+        <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-1">
+                    <div class="card-heading"></div>
+                    <div class="card-body">
+                        <h2 class="title">Student Info</h2>
+                        <form>
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <label>NAME:&emsp;</label>
+                                <label>{{ student.student_name }}</label>
+                                <!-- <input class="input--style-1-static" type="text" value="Shail Shah" name="name"> -->
+                            </div>
+                        
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <label>GENDER:&emsp;</label>
+                                            <label>{{ student.student_gender }}</label>
+                                            <!-- <select name="gender">
+                                                <option disabled="disabled" selected="selected">GENDER</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Other</option>
+                                            </select> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                    <label>ADDRESS LINE 1:&emsp;</label>
+                                    <label>{{ student.student_add1 }}</label>
+                                <!-- <input class="input--style-1" type="text" placeholder="ADRESS LINE 1" name="adress1"> -->
+                            </div>
+                            <div class="input-group">
+                                <label>ADDRESS LINE 2:&emsp;</label>
+                                <label>{{ student.student_add2 }}</label>
+                                <!-- <input class="input--style-1" type="text" placeholder="ADRESS LINE 2" name="adress2"> -->
+                            </div>
+                            <div class="row row-space">
+                                <div>
+                                    <div class="input-group">
+                                        <label>AADHAAR CARD NUMBER:&emsp;</label>
+                                        <label>{{ student.student_aadhar }}</label>
+                                        <!-- <input class="input--style-1" type="number" placeholder="ADHAR CARD NUMBER" name="adhar"> -->
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label>STATION:&emsp;</label>
+                                        <label id="from">{{ student.student_station }}</label>
+                                        <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label>COLLEGE:&emsp;</label>
+                                        <label>{{ student.college.college_name }}</label>
+                                            <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label>DESTINATION:&emsp;</label>
+                                            <label id="to">{{ student.college.college_location }}</label>
+                                                <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-2">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="class" id="cla" onchange="check_fare()">
+                                                <option disabled="disabled" selected="selected">CLASS</option>
+                                                <option value="First">First</option>
+                                                <option value="Second">Second</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3>Your Pass Price After Concession is : <span  id="deploy"></span></h3>
+                                </div>
+                        
+                            <div class="p-t-20">
+                                <button class="btn btn--radius btn--green" onclick="alert('Form Submited')">Submit</button>
+                            </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <h1>Page Not Found</h1>
+    {% endif %}
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+    <script>
+        // var fare_cal = {
+        //     "Malad" : 750,
+        //     "Kandivali" : 350,
+        // }
+        // var from = document.getElementById("from").textContent
+        // console.log(fare_cal[from])
+
+        var western = {
+            "Borivali" : 1,
+            "Kandivali" : 2,
+            "Malad" : 3,
+            "Goregaon" : 4,
+            "Ram Mandir" : 5,
+            "Jogeshwari" : 6,
+            "Andheri" : 7,
+            "Vile Parle" : 8,
+            "Santa Cruz" : 9,
+            "Khar Road" : 10,
+            "Bandra" : 11,
+            "Mahim" : 12,
+            "Matunga" : 13,
+            "Dadar" : 14,
+            "Prabhadevi" : 15,
+            "Lower Parel" : 16,
+            "Mahalakshmi" : 17,
+            "Mumbai Central" : 18,
+            "Grant Road" : 19,
+            "Charni Road" : 20,
+            "Marine Lines" : 21,
+            "Churchgate" : 22,
+        }
+
+        var from = document.getElementById("from").textContent;
+        console.log(from)
+
+        var to = "Vile Parle"//document.getElementById("to").textContent;
+
+        var fare = [1600,800,400,200];
+
+        
+
+        var class_faremor5 = {
+            "First" : fare[1],
+            "Second" : fare[2],
+        };
+
+        var class_faremor10 = {
+            "First" : fare[0],
+            "Second" : fare[1],
+        };
+
+        var class_fareless5 = {
+            "First" : fare[2],
+            "Second" : fare[3],
+        }
+        console.log(western[from])
+
+
+        function check_fare(){
+            var class_name = document.getElementById("cla").value
+            if(Math.abs(western[from] - western[to]) > 5 && Math.abs(western[from] - western[to]) < 10){
+                document.getElementById("deploy").textContent = class_faremor5[class_name];
+            }else if(Math.abs(western[from] - western[to]) == 0){
+                document.getElementById("deploy").textContent = 0;
+            }else if(Math.abs(western[from] - western[to]) > 10){
+                document.getElementById("deploy").textContent = class_faremor10[class_name];
+            }else{
+                document.getElementById("deploy").textContent = class_fareless5[class_name];
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>

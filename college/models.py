@@ -14,8 +14,8 @@ class CollegeData(models.Model):
         return self.college_name
 
 class StudentData(models.Model):
-    college = models.ForeignKey(CollegeData,related_name='college', on_delete=models.CASCADE, blank = True)
-    user = models.OneToOneField('accounts.CustomUser', related_name = 'Student_user',on_delete=models.CASCADE)
+    college = models.ForeignKey(CollegeData,related_name='student', on_delete=models.CASCADE, blank = True)
+    student_name = models.CharField(max_length=100)
     student_gender = models.CharField(max_length = 10)
     student_add1 = models.CharField(max_length = 300)
     student_add2 = models.CharField(max_length = 300)

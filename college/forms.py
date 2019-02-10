@@ -18,4 +18,4 @@ class StudentDataForm(forms.ModelForm):
     class Meta:
         model = StudentData
         exclude = ('college',)
-        fields = ('college','student_gender','student_add1','student_add2','student_aadhar','student_station')
+        fields = ('student_name','student_gender','student_add1','student_add2','student_aadhar','student_station')

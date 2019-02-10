@@ -9,6 +9,5 @@ urlpatterns = [
     url(r'^college-login/$',views.login_page, name='login'),
     url(r'^college/$',views.StudentDetailView.as_view(), name='dashboard'),
     url(r'^$',views.LandingView,name = "landing"),
-   
 
 ]

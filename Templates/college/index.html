@@ -54,18 +54,22 @@
                             <div class="col-md-12">
                                 <form method="post">
                                     {% csrf_token %}
+                                    <input type="hidden" value="A" name="type">
                                     <div class="form-group">
-                                        <input type="number" name="LGform1_user" class="form-control" placeholder="Your Adhar Card Number*" value="" required="" />
+                                        <input type="number" name="Aadhar_no" class="form-control" placeholder="Your Adhar Card Number*" value="" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="college" class="form-control" placeholder="College Name*" value="" required="" />
                                     </div>
                                     
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <select class="custom-select custom-select-md mb-3">
                                             <option selected>Select College*</option>
                                             <option value="1">DJ Sanghvi</option>
                                             <option value="2">Thadomal</option>
                                             <option value="3">KJ somaiya</option>
                                           </select>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                         <input type="submit" name="LGform1" class="btnContactSubmit" value="Login" />
                                         <a href="ForgetPassword.php" class="btnForgetPwd" value="Login">Forget

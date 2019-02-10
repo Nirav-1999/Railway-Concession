@@ -6,6 +6,7 @@ from django.contrib.auth.forms import  AuthenticationForm
 from .forms import CollegeDataForm,UserForm,StudentDataForm
 from .models import CollegeData,StudentData
 from django.views import generic
+from django.shortcuts import get_object_or_404
 
 
 def college_signup_view(request):
@@ -68,20 +69,26 @@ def add_student(request):
 
 def login_page(request):
     if request.method == "POST":
-        form = AuthenticationForm(data = request.POST)
-        print(form)
-        # print(form)
-        if form.is_valid():
-            print("----HI----")
-            user = form.get_user()
-            print(user)
-            login(request, user)    
-            if user.is_student:
-                return redirect('')
-            elif user.is_college:
-                return redirect('college:dashboard')
+        print(request.POST['type'])
+        if request.POST['type'] == 'A':
+            aadhar = request.POST['Aadhar_no']
+            college = request.POST['college']
+            a = StudentData.objects.get(student_aadhar = aadhar)
+            return render(request,'college/studentdetails.html',{'student':a})
+
         else:
-            print(form.errors)
+            form = AuthenticationForm(data = request.POST)
+            print(form)
+            # print(form)
+            if form.is_valid():
+                user = form.get_user()
+                login(request, user)    
+                return redirect('college:dashboard')
+            else:
+                print(form.errors)
+        
+
+
     else:
         form = AuthenticationForm()
         return render(request, "college/index.html", {"form" : form})
@@ -95,3 +102,5 @@ class StudentDetailView(generic.ListView):
 
 def LandingView(request):
     return render(request,'college/landing.html')   
+
+

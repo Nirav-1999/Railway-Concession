@@ -23,8 +23,7 @@ class StudentData(models.Model):
     student_station = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.user.username
-    
+        return self.student_name
 
 @receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):

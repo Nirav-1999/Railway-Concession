@@ -32,3 +32,6 @@ class StudentDetailView(generic.ListView):
     context_object_name='students'
     def get_queryset(self):
         return StudentData.objects.all()
+
+class ticketview(generic.TemplateView):
+    template_name = "railway/ticket.html"

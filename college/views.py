@@ -91,6 +91,7 @@ def login_page(request):
     else:
         form = AuthenticationForm()
         return render(request, "college/index.html", {"form" : form})
+    
 
 class StudentDetailView(generic.ListView):
     model=StudentData
@@ -102,4 +103,7 @@ class StudentDetailView(generic.ListView):
 def LandingView(request):
     return render(request,'college/landing.html')   
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> c3f39a9771eb7ac3218cac82de157f4a9f099388

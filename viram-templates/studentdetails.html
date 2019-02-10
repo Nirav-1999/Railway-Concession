@@ -10,18 +10,19 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Student Details</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="../static/college/select2.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
 
     <!-- Main CSS-->
-    <link href="style1.css" rel="stylesheet" media="all">
+    <link href="css/style1.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Student Info</h2>
-                    <form method="POST">
+                    <form>
                         <div class="input-group">
                             <label>NAME:&emsp;</label>
                             <label>Shail Shah</label>
@@ -86,13 +87,35 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label>STATION:&emsp;</label>
-                                    <label>Kandivali</label>
+                                    <label id="from">Charni Road</label>
                                     <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
                                 </div>
                             </div>
                         </div>
-                        
-                       
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label>COLLEGE:&emsp;</label>
+                                    <label id="to">D J Sanghvi</label>
+                                        <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="class" id="cla" onchange="check_fare()">
+                                            <option disabled="disabled" selected="selected">CLASS</option>
+                                            <option value="First">First</option>
+                                            <option value="Second">Second</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Your Pass Price After Concession is : <span  id="deploy"></span></h3>
+                            </div>
                        
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit">Submit</button>
@@ -112,7 +135,80 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
+    <script>
+        // var fare_cal = {
+        //     "Malad" : 750,
+        //     "Kandivali" : 350,
+        // }
+        // var from = document.getElementById("from").textContent
+        // console.log(fare_cal[from])
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+        var western = {
+            "Borivali" : 1,
+            "Kandivali" : 2,
+            "Malad" : 3,
+            "Goregaon" : 4,
+            "Ram Mandir" : 5,
+            "Jogeshwari" : 6,
+            "Andheri" : 7,
+            "Vile Parle" : 8,
+            "Santa Cruz" : 9,
+            "Khar Road" : 10,
+            "Bandra" : 11,
+            "Mahim" : 12,
+            "Matunga" : 13,
+            "Dadar" : 14,
+            "Prabhadevi" : 15,
+            "Lower Parel" : 16,
+            "Mahalakshmi" : 17,
+            "Mumbai Central" : 18,
+            "Grant Road" : 19,
+            "Charni Road" : 20,
+            "Marine Lines" : 21,
+            "Churchgate" : 22,
+        }
+
+        var from = document.getElementById("from").textContent;
+        console.log(from)
+
+        var to = "Vile Parle"//document.getElementById("to").textContent;
+
+        var fare = [1600,800,400,200];
+
+        
+
+        var class_faremor5 = {
+            "First" : fare[1],
+            "Second" : fare[2],
+        };
+
+        var class_faremor10 = {
+            "First" : fare[0],
+            "Second" : fare[1],
+        };
+
+        var class_fareless5 = {
+            "First" : fare[2],
+            "Second" : fare[3],
+        }
+        console.log(western[from])
+
+
+        function check_fare(){
+            var class_name = document.getElementById("cla").value
+            if(Math.abs(western[from] - western[to]) > 5 && Math.abs(western[from] - western[to]) < 10){
+                document.getElementById("deploy").textContent = class_faremor5[class_name];
+            }else if(Math.abs(western[from] - western[to]) == 0){
+                document.getElementById("deploy").textContent = 0;
+            }else if(Math.abs(western[from] - western[to]) > 10){
+                document.getElementById("deploy").textContent = class_faremor10[class_name];
+            }else{
+                document.getElementById("deploy").textContent = class_fareless5[class_name];
+            }
+        }
+        
+    </script>
+
+</body>
 
 </html>

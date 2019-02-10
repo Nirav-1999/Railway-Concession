@@ -111,3 +111,6 @@ class StudentDetailView(generic.ListView):
     context_object_name='students'
     def get_queryset(self):
         return StudentData.objects.all()
+
+def LandingView(request):
+    return render(request,'college/landing.html')   

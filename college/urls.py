@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^add-student/$',views.add_student, name='Add-Student'),
     url(r'^college-login/$',views.login_page, name='login'),
     url(r'^college/$',views.StudentDetailView.as_view(), name='dashboard'),
+    url(r'^$',views.LandingView,name = "landing"),
    
 
 ]

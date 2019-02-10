@@ -5,4 +5,3 @@ class CustomUser(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_college = models.BooleanField(default=False)
     is_railway = models.BooleanField(default=False)
-    username = models.CharField(max_length = 100)

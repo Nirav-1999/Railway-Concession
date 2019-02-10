@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-from django.contrib.auth.forms import UserCreationForm
-from accounts.models import CustomUser
-from django import forms
-from django.db import transaction
-from .models import CollegeData,StudentData
-
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'email')
-
-class CollegeDataForm(forms.ModelForm):
-    class Meta:
-        model = CollegeData
-        fields = ('college_name', 'college_location')
-        
-class StudentDataForm(forms.ModelForm):
-    class Meta:
-        model = StudentData
-        fields = ('student_name', 'student_bdate','student_gender','student_add1','student_add2','student_aadhar','student_station')
-=======
 from django.contrib.auth.forms import UserCreationForm
 from accounts.models import CustomUser
 from django import forms
@@ -40,4 +18,3 @@ class StudentDataForm(forms.ModelForm):
     class Meta:
         model = StudentData
         fields = ('student_bdate','student_gender','student_add1','student_add2','student_aadhar','student_station')
->>>>>>> 8839679c1e81b73ed1a1b9da787586e8dc2fcb01

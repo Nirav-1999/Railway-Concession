@@ -1,3 +1,153 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  .fadeIn {
+    animation: fadeIn 1s;
+    animation-name: fadeIn;
+  }
+  .content {
+    width: 94%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 16px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: #000;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+}
+.text-content{
+    font-weight: lighter;
+	
+	position: absolute;
+	top: 40vh;
+	left:50%;
+	transform: translate(-50%,-50%);
+	
+	font-size: 96px;
+	z-index: 11111;
+	/* text-shadow: 2px 2px rgba(78, 78, 78, 0.5); */
+	background:  rgba(2,2,2,0.7);
+	padding: 10px;
+	text-align: center;
+	pointer-events: none;
+}
+
+  .background{
+      background-image: url('../images/background.jpg');
+      background-size: cover;
+      background-position: 50%;
+      position: relative;
+      height:100vh;
+      opacity:0.8;
+  }
+  .btns{
+      position: absolute;
+      top: 0px;
+      color: white;
+
+	
+        width: 100%;
+	color: var(--red);
+	
+	z-index: 111;
+  }
+  
 .btnContactSubmit
 {
     width: 50%;
@@ -14,6 +164,7 @@
 }
 .register .nav-tabs .nav-link:hover{
     border: none;
+    
 }
 .text-align{
     margin-top: -3%;
@@ -27,12 +178,12 @@
     margin-left: 20%;
 }
 .register-heading{
-    margin-left: 21%;
+    /* margin-left: 21%; */
     margin-bottom: 10%;
     color: #e9ecef;
 }
 .register-heading h1{
-    margin-left: 21%;
+    /* margin-left: 21%; */
     margin-bottom: 10%;
     color: #e9ecef;
 }
@@ -51,9 +202,16 @@
 }
 .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: 3%;
+    margin-top: 8%;
     padding: 3%;
     border-radius: 2.5rem;
+    position:absolute;
+    top:0;
+    text-align: center;
+   margin-left: 14%;
+   
+    
+    
 }
 .nav-tabs .nav-link{
     border: 1px solid transparent;

@@ -13,16 +13,15 @@
     <title>Student Details</title>
 
     <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="{% static vendor/mdi-font/css/material-design-iconic-font.min.css %}" rel="stylesheet" media="all">
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <link href="../static/college/select2.min.css" rel="stylesheet" media="all">
+    <link href="{% static https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i %}" rel="stylesheet">
+    <link href="{% ../static/college/select2.min.css %}" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
 
     <!-- Main CSS-->
-    <link href="css/style1.css" rel="stylesheet" media="all">
+    <link href="{% static css/style1.css %}" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -40,14 +39,6 @@
                         </div>
                       
                         <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label>BIRTHDATE:&emsp;</label>
-                                    <label>{{ student.student_bdate }}</label>
-                                    <!-- <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i> -->
-                                </div>
-                            </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">

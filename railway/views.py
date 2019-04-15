@@ -33,5 +33,6 @@ class StudentDetailView(generic.ListView):
     def get_queryset(self):
         return StudentData.objects.all()
 
-class ticketview(generic.TemplateView):
+class ticketview(generic.DeleteView):
+    model=StudentData
     template_name = "railway/ticket.html"

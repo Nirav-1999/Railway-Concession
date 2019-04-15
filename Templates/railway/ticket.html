@@ -37,7 +37,7 @@
                    
                         <div class="input-group">
                             <label>NAME:&emsp;</label>
-                            <label>Shail Shah</label>
+                            <label>{{student.student_name}}</label>
                             <!-- <input class="input--style-1-static" type="text" value="Shail Shah" name="name"> -->
                         </div>
                       
@@ -54,7 +54,7 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <label>GENDER:&emsp;</label>
-                                        <label>Male</label>
+                                        <label>{{student.student_gender}}</label>
                                         <!-- <select name="gender">
                                             <option disabled="disabled" selected="selected">GENDER</option>
                                             <option>Male</option>
@@ -67,19 +67,19 @@
                         </div>
                         <div class="input-group">
                                 <label>ADDRESS LINE 1:&emsp;</label>
-                                <label>A-301,Neelam Apt.,S.M.Road No.2,</label>
+                                <label>{{student.student_add1}}</label>
                             <!-- <input class="input--style-1" type="text" placeholder="ADRESS LINE 1" name="adress1"> -->
                         </div>
                         <div class="input-group">
                             <label>ADDRESS LINE 2:&emsp;</label>
-                            <label>Iraniwadi,Kandivali W,Mumbai-400067</label>
+                            <label>{{student.student_add2}}</label>
                             <!-- <input class="input--style-1" type="text" placeholder="ADRESS LINE 2" name="adress2"> -->
                         </div>
                         <div class="row row-space">
                             <div>
                                 <div class="input-group">
                                     <label>AADHAAR CARD NUMBER:&emsp;</label>
-                                    <label>60004170103</label>
+                                    <label>{{student.student_aadhar}}</label>
                                     <!-- <input class="input--style-1" type="number" placeholder="ADHAR CARD NUMBER" name="adhar"> -->
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label>FROM&emsp;</label>
+                                    <label>TO&emsp;</label>
                                     <label>Vile Parle(college location)</label>
                                     <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
                                 </div>
@@ -98,7 +98,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label>FROM&emsp;</label>
-                                    <label>Kandivali(residence)</label>
+                                    <label>{{student.student_station}}</label>
                                     <!-- <input class="input--style-1" type="text" placeholder="STATION EX.MALAD" name="station"> -->
                                 </div>
                             </div>

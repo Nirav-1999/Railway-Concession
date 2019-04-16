@@ -33,6 +33,8 @@ class StudentDetailView(generic.ListView):
     def get_queryset(self):
         return StudentData.objects.all()
 
-class ticketview(generic.DetailView):
-    model=StudentData
-    template_name = "railway/ticket.html"
+def ticketview(request,pk):
+    data = StudentData.objects.get(pk=pk)
+    print("------------------")
+    print(data)
+    return render(request,'railway/ticket.html',{'student':data})
